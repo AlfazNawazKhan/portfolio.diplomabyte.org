@@ -61,3 +61,29 @@ logos.forEach(logo => {
   const clone = logo.cloneNode(true);
   marqueeTrack.appendChild(clone);
 });
+
+// ========== DIPLOMABYTE CSE MODE TOGGLE ==========
+const cseModeToggle = document.getElementById('cse-mode-toggle');
+const body = document.body;
+
+// Check localStorage for saved mode
+const savedMode = localStorage.getItem('diplomabyte-cse-mode');
+if (savedMode === 'active') {
+  body.classList.add('cse-mode');
+  updateCseButtonText(true);
+}
+
+function updateCseButtonText(isActive) {
+  const cseText = cseModeToggle.querySelector('.cse-mode-text');
+  if (isActive) {
+    cseText.textContent = '☀ Clean_Mode';
+  } else {
+    cseText.textContent = '>_ CSE_Mode';
+  }
+}
+
+cseModeToggle.addEventListener('click', () => {
+  const isActive = body.classList.toggle('cse-mode');
+  updateCseButtonText(isActive);
+  localStorage.setItem('diplomabyte-cse-mode', isActive ? 'active' : 'inactive');
+});
