@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DiplomaByte - Power AI</title>
+  <title>DiplomaByte — Study Smart, not just hard.</title>
+  <meta name="description" content="AI-powered edtech platform for Bangladeshi Diploma in Engineering (CST) students, built around Google NotebookLM notebooks aligned to the 2022 BTEB syllabus." />
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500,600,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -42,24 +43,30 @@
 
         <!-- Center: Nav Items -->
         <div class="navbar-center">
+          <button class="nav-item" onclick="window.open('https://diplomabyte.vercel.app', '_blank')">
+            Home
+          </button>
+          <button class="nav-item" onclick="window.open('https://diplomabyte.vercel.app#about', '_blank')">
+            About
+          </button>
           <button class="nav-item">
-            Features
+            Semesters
             <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
-          <button class="nav-item">Solutions</button>
-          <button class="nav-item">Plans</button>
-          <button class="nav-item">
-            Learning
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
+          <button class="nav-item" onclick="window.open('https://forms.gle/sf3hpQVvmB2iJHTY8', '_blank')">
+            Feedback
           </button>
         </div>
 
-        <!-- Right: Sign Up Button -->
-        <button class="btn-hero-secondary btn-signup">Sign Up</button>
+        <!-- Right: CSE Mode Toggle & CTA -->
+        <div class="navbar-right">
+          <button class="btn-cse-mode" id="cse-mode-toggle" aria-label="Toggle CSE mode">
+            <span class="cse-mode-text">&gt;_ CSE_Mode</span>
+          </button>
+          <a href="https://diplomabyte.vercel.app" target="_blank" class="btn-hero-primary btn-signup">Get Started</a>
+        </div>
       </nav>
 
       <!-- Gradient Divider -->
@@ -67,51 +74,115 @@
 
       <!-- Hero Content -->
       <main class="hero-content">
+        <p class="section-tag">study_platform</p>
+        
         <h1 class="headline">
-          <span class="headline-plain">Power </span>
-          <span class="headline-gradient">AI</span>
+          <span class="headline-plain">Study </span>
+          <span class="headline-gradient">Smart</span>
         </h1>
 
         <p class="subtitle">
-          The most powerful AI ever deployed<br />in talent acquisition
+          AI-powered edtech platform for Bangladeshi Diploma in Engineering students<br />
+          <span lang="bn" class="bengali-text">তুমি সারাদিন কত ঘণ্টা পড়ো? তোমার পড়ার উদ্দেশ্যটা কী?</span>
         </p>
 
-        <button class="btn-hero-secondary btn-cta">Schedule a Consult</button>
+        <div class="hero-buttons">
+          <a href="https://diplomabyte.vercel.app" target="_blank" class="btn-hero-primary btn-cta">
+            Explore Semesters
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </a>
+          <button class="btn-hero-secondary btn-cta-secondary" onclick="window.open('https://diplomabyte.vercel.app#about', '_blank')">
+            About Us
+          </button>
+        </div>
       </main>
+
+      <!-- Features Section -->
+      <section class="features-section">
+        <p class="section-tag">platform_contents</p>
+        <h2 class="features-title">Contents of Our Platform</h2>
+        <p class="features-subtitle">Everything you need to master your diploma curriculum — mostly free.</p>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📓</div>
+            <h3 class="feature-title">NotebookLM Access</h3>
+            <p class="feature-desc">Full notebooks, mostly free</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎬</div>
+            <h3 class="feature-title">Video Lessons</h3>
+            <p class="feature-desc">Per-chapter video content</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎧</div>
+            <h3 class="feature-title">Audio Podcasts</h3>
+            <p class="feature-desc">Learn on the go</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3 class="feature-title">Chapter Discussions</h3>
+            <p class="feature-desc">Interactive debates</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🖼️</div>
+            <h3 class="feature-title">Visual Infographics</h3>
+            <p class="feature-desc">Dual-coding visual aids</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🗂️</div>
+            <h3 class="feature-title">Flashcards</h3>
+            <p class="feature-desc">Active recall built in</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3 class="feature-title">Practice Quizzes</h3>
+            <p class="feature-desc">Test yourself constantly</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3 class="feature-title">Mindmaps</h3>
+            <p class="feature-desc">Connect the dots</p>
+          </div>
+        </div>
+      </section>
 
       <!-- Logo Marquee -->
       <footer class="marquee-footer">
         <div class="marquee-container">
           <div class="marquee-text">
-            Relied on by brands<br />across the globe
+            Trusted by diploma students<br />across Bangladesh
           </div>
           
           <div class="marquee-wrapper">
             <div class="marquee-track" id="marquee-track">
               <!-- Logos will be duplicated via JS for seamless loop -->
               <div class="marquee-logo">
-                <div class="liquid-glass logo-icon">V</div>
-                <span class="logo-name">Vortex</span>
+                <div class="liquid-glass logo-icon">C</div>
+                <span class="logo-name">CST</span>
+              </div>
+              <div class="marquee-logo">
+                <div class="liquid-glass logo-icon">B</div>
+                <span class="logo-name">BTEB</span>
+              </div>
+              <div class="marquee-logo">
+                <div class="liquid-glass logo-icon">A</div>
+                <span class="logo-name">AI-Powered</span>
               </div>
               <div class="marquee-logo">
                 <div class="liquid-glass logo-icon">N</div>
-                <span class="logo-name">Nimbus</span>
+                <span class="logo-name">NotebookLM</span>
               </div>
               <div class="marquee-logo">
-                <div class="liquid-glass logo-icon">P</div>
-                <span class="logo-name">Prysma</span>
+                <div class="liquid-glass logo-icon">E</div>
+                <span class="logo-name">EdTech</span>
               </div>
               <div class="marquee-logo">
-                <div class="liquid-glass logo-icon">C</div>
-                <span class="logo-name">Cirrus</span>
-              </div>
-              <div class="marquee-logo">
-                <div class="liquid-glass logo-icon">K</div>
-                <span class="logo-name">Kynder</span>
-              </div>
-              <div class="marquee-logo">
-                <div class="liquid-glass logo-icon">H</div>
-                <span class="logo-name">Halcyn</span>
+                <div class="liquid-glass logo-icon">D</div>
+                <span class="logo-name">Diploma</span>
               </div>
             </div>
           </div>
@@ -120,7 +191,7 @@
 
     </div>
   </div>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
